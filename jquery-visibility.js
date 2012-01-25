@@ -1,8 +1,9 @@
-/*! http://mths.be/visibility v1.0.0 by @mathias */
+/*! http://mths.be/visibility v1.0.1 by @mathias */
 (function(document, $, undefined) {
 
-	var propertyName,
-	    eventName = 'focusin focusout'; // fallback events
+	var isIE = 'fileSize' in document, // TODO: make this mo’ betta
+	    propertyName,
+	    eventName;
 
 	if (document.hidden != undefined) {
 		propertyName = 'hidden';
@@ -23,8 +24,10 @@
 
 	$.support.pageVisibility = !!propertyName;
 
-	$(document).on(eventName, function(event) {
-		$.event.trigger(propertyName && document[propertyName] || event.type == 'focusout' ? 'hide.visibility' : 'show.visibility');
+	// IE needs `document.focus{in,out}`
+	// Safari and Opera need window.{focus,blur}
+	$((propertyName || isIE) ? document : window).on(propertyName ? eventName : isIE ? 'focusin focusout' : 'focus blur', function(event) {
+		$.event.trigger(propertyName && document[propertyName] || /^(?:blur|focusout)$/.test(event.type) ? 'hide.visibility' : 'show.visibility');
 	});
 
 }(document, jQuery));
