@@ -1,4 +1,4 @@
-# Page Visibility plugin for jQuery
+# Page Visibility shim for jQuery
 
 This plugin gives you a very simple API that allows you to execute callbacks when the page’s visibility state changes.
 
