@@ -1,5 +1,5 @@
-/*! http://mths.be/visibility v1.0.2 by @mathias */
-;(function(document, $) {
+/*! http://mths.be/visibility v1.0.3α by @mathias */
+;(function(window, document, $) {
 
 	var prefix,
 	    prop,
@@ -14,8 +14,8 @@
 		}
 	}
 
-	$('blur' == eventName ? window : document).on(eventName, function(event) {
+	$(/blur$/.test(eventName) ? window : document).on(eventName, function(event) {
 		$.event.trigger((prop && document[prop] || /^(?:blur|focusout)$/.test(event.type) ? 'hide' : 'show') + '.visibility');
 	});
 
-}(document, jQuery));
+}(this, document, jQuery));
