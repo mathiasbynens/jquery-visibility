@@ -1,5 +1,5 @@
-/*! http://mths.be/visibility v1.0.3 by @mathias */
-;(function(window, document, $) {
+/*! http://mths.be/visibility v1.0.4 by @mathias */
+;(function(window, document, $, undefined) {
 
 	var prefix,
 	    property,
@@ -18,12 +18,14 @@
 	}
 
 	$(/blur$/.test(eventName) ? window : document).on(eventName, function(event) {
-		var originalEvent = event.originalEvent;
-		// If it’s a `{focusin,focusout}` event, `fromElement` and `toElement` should be both `null`;
+		var type = event.type,
+		    originalEvent = event.originalEvent,
+		    toElement = originalEvent.toElement;
+		// If it’s a `{focusin,focusout}` event (IE), `fromElement` and `toElement` should both be `null` or `undefined`;
 		// else, the page visibility hasn’t changed, but the user just clicked somewhere in the doc.
-		// `fromElement` and `toElement` never have the same value unless they’re both `null`.
-		if (!/^focus./.test(event.type) || originalEvent.fromElement == originalEvent.toElement) {
-			$event.trigger((property && document[property] || /^(?:blur|focusout)$/.test(event.type) ? 'hide' : 'show') + '.visibility');
+		// In IE9, we need to check the `relatedTarget` property instead.
+		if (!/^focus./.test(type) || (toElement == undefined && originalEvent.fromElement == undefined && originalEvent.relatedTarget == undefined)) {
+			$event.trigger((property && document[property] || /^(?:blur|focusout)$/.test(type) ? 'hide' : 'show') + '.visibility');
 		}
 	});
 
