@@ -1,4 +1,4 @@
-/*! http://mths.be/visibility v1.0.4 by @mathias */
+/*! http://mths.be/visibility v1.0.5 by @mathias */
 ;(function(window, document, $, undefined) {
 
 	var prefix,
@@ -9,7 +9,7 @@
 	    $support = $.support,
 	    $event = $.event;
 
-	while ((property = prefix = prefixes.pop()) != null) {
+	while ((property = prefix = prefixes.pop()) != undefined) {
 		property = (prefix ? prefix + 'H': 'h') + 'idden';
 		if ($support.pageVisibility = typeof document[property] == 'boolean') {
 			eventName = prefix + 'visibilitychange';
