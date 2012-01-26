@@ -8,6 +8,10 @@ It does so by using the [the Page Visibility API](http://www.w3.org/TR/page-visi
 
 <http://mathiasbynens.be/demo/jquery-visibility>
 
+## When to use?
+
+Example use cases include but are not limited to pausing/resuming slideshows, video, and/or embedded audio clips.
+
 ## Example usage
 
 This plugin simply provides two custom events for you to use: `show` and `hide`. When the page visibility state changes, the appropriate event will be triggered.
