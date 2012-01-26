@@ -1,33 +1,21 @@
-/*! http://mths.be/visibility v1.0.1 by @mathias */
-(function(document, $, undefined) {
+/*! http://mths.be/visibility v1.0.2 by @mathias */
+;(function(document, $) {
 
-	var isIE = 'fileSize' in document, // TODO: make this mo’ betta
-	    propertyName,
-	    eventName;
+	var prefix,
+	    prop,
+	    eventName = 'onfocusin' in document && 'hasFocus' in document ? 'focusin focusout' : 'focus blur',
+	    prefixes = ['', 'moz', 'ms', 'o', 'webkit'];
 
-	if (document.hidden != undefined) {
-		propertyName = 'hidden';
-		eventName = 'visibilitychange';
-	} else if (document.mozHidden != undefined) {
-		propertyName = 'mozHidden';
-		eventName = 'mozvisibilitychange';
-	} else if (document.msHidden != undefined) {
-		propertyName = 'msHidden';
-		eventName = 'msvisibilitychange';
-	} else if (document.oHidden != undefined) {
-		propertyName = 'oHidden';
-		eventName = 'ovisibilitychange';
-	} else if (document.webkitHidden != undefined) {
-		propertyName = 'webkitHidden';
-		eventName = 'webkitvisibilitychange';
+	while ((prop = prefix = prefixes.pop()) != null) {
+		prop = (prefix ? prefix + 'H': 'h') + 'idden';
+		if ($.support.pageVisibility = typeof document[prop] == 'boolean') {
+			eventName = prefix + 'visibilitychange';
+			break;
+		}
 	}
 
-	$.support.pageVisibility = !!propertyName;
-
-	// IE needs `document.focus{in,out}`
-	// Safari and Opera need window.{focus,blur}
-	$((propertyName || isIE) ? document : window).on(propertyName ? eventName : isIE ? 'focusin focusout' : 'focus blur', function(event) {
-		$.event.trigger(propertyName && document[propertyName] || /^(?:blur|focusout)$/.test(event.type) ? 'hide.visibility' : 'show.visibility');
+	$('blur' == eventName ? window : document).on(eventName, function(event) {
+		$.event.trigger(prop && document[prop] || /^(?:blur|focusout)$/.test(event.type) ? 'hide.visibility' : 'show.visibility');
 	});
 
 }(document, jQuery));

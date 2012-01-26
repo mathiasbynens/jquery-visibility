@@ -56,3 +56,7 @@ This plugin is not a Page Visibility [polyfill](http://mths.be/polyfills), as it
 ## Author
 
 [Mathias Bynens](http://mathiasbynens.be/)
+
+## Contributors
+
+[John-David Dalton](http://allyoucanleet.com/)
