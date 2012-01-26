@@ -15,7 +15,7 @@
 	}
 
 	$('blur' == eventName ? window : document).on(eventName, function(event) {
-		$.event.trigger(prop && document[prop] || /^(?:blur|focusout)$/.test(event.type) ? 'hide.visibility' : 'show.visibility');
+		$.event.trigger((prop && document[prop] || /^(?:blur|focusout)$/.test(event.type) ? 'hide' : 'show') + '.visibility');
 	});
 
 }(document, jQuery));
