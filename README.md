@@ -57,6 +57,10 @@ Both events live under the `visibility` namespace — so if you ever need to rem
 
 This plugin is not a Page Visibility [polyfill](http://mths.be/polyfills), as it doesn’t aim to mimic the standard API. It merely provides a simple way to use this functionality (or a fallback) in your jQuery code.
 
+## License
+
+This plugin is dual licensed under the MIT and GPL licenses, just like jQuery itself.
+
 ## Author
 
 [Mathias Bynens](http://mathiasbynens.be/)
