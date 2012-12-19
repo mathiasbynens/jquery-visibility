@@ -20,7 +20,11 @@
 	$(/blur$/.test(eventName) ? window : document).on(eventName, function(event) {
 		var type = event.type,
 		    originalEvent = event.originalEvent,
-		    toElement = originalEvent.toElement;
+		    toElement = originalEvent && originalEvent.toElement;
+		// To avoid errors from triggered events for which originalEvent is not available.    
+		if(!originalEvent){
+			return;
+		}    
 		// If it’s a `{focusin,focusout}` event (IE), `fromElement` and `toElement` should both be `null` or `undefined`;
 		// else, the page visibility hasn’t changed, but the user just clicked somewhere in the doc.
 		// In IE9, we need to check the `relatedTarget` property instead.
