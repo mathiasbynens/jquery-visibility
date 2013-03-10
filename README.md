@@ -2,7 +2,7 @@
 
 This plugin gives you a very simple API that allows you to execute callbacks when the page’s visibility state changes.
 
-It does so by using the [the Page Visibility API](http://www.w3.org/TR/page-visibility/) where it’s supported, and falling back to good old `focus` and `blur` in older browsers.
+It does so by using [the Page Visibility API](http://www.w3.org/TR/page-visibility/) where it’s supported, and falling back to good old `focus` and `blur` in older browsers.
 
 ## Demo
 
