@@ -1,4 +1,4 @@
-/*! http://mths.be/visibility v1.0.5 by @mathias */
+/*! http://mths.be/visibility v1.0.6 by @mathias */
 ;(function(window, document, $, undefined) {
 
 	var prefix;
