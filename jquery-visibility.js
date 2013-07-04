@@ -5,11 +5,11 @@
 	    property,
 	    // In Opera, `'onfocusin' in document == true`, hence the extra `hasFocus` check to detect IE-like behavior
 	    eventName = 'onfocusin' in document && 'hasFocus' in document ? 'focusin focusout' : 'focus blur',
-	    prefixes = ['', 'moz', 'ms', 'o', 'webkit'],
+	    prefixes = ['webkit', 'o', 'ms', 'moz', ''],
 	    $support = $.support,
 	    $event = $.event;
 
-	while ((property = prefix = prefixes.pop()) != undefined) {
+	while ((prefix = prefixes.pop()) != undefined) {
 		property = (prefix ? prefix + 'H': 'h') + 'idden';
 		if ($support.pageVisibility = typeof document[property] == 'boolean') {
 			eventName = prefix + 'visibilitychange';
