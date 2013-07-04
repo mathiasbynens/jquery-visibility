@@ -9,7 +9,7 @@
 	    $support = $.support,
 	    $event = $.event;
 
-	while ((property = prefix = prefixes.pop()) != undefined) {
+	while ((prefix = prefixes.shift()) != undefined) {
 		property = (prefix ? prefix + 'H': 'h') + 'idden';
 		if ($support.pageVisibility = typeof document[property] == 'boolean') {
 			eventName = prefix + 'visibilitychange';
