@@ -22,7 +22,7 @@
 		    originalEvent = event.originalEvent,
 		    toElement = originalEvent && originalEvent.toElement;
 		// To avoid errors from triggered events for which originalEvent is not available.    
-		if(!originalEvent){
+		if (!originalEvent) {
 			return;
 		}    
 		// If it’s a `{focusin,focusout}` event (IE), `fromElement` and `toElement` should both be `null` or `undefined`;
