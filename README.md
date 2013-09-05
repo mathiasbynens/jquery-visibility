@@ -59,7 +59,7 @@ This plugin is not a Page Visibility [polyfill](http://mths.be/polyfills), as it
 
 ## License
 
-This plugin is dual licensed under the MIT and GPL licenses, just like jQuery itself.
+This plugin is available under the MIT license.
 
 ## Author
 

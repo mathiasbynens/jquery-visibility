@@ -1,4 +1,4 @@
-/*! http://mths.be/visibility v1.0.6 by @mathias */
+/*! http://mths.be/visibility v1.0.7 by @mathias | MIT license */
 ;(function(window, document, $, undefined) {
 
 	var prefix;
