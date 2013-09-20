@@ -19,11 +19,6 @@
 		}
 	}
 
-	$.pageHidden = function() {
-
-		return (prefix) ? document[prefix + 'Hidden'] : document.hidden;
-	};
-
 	$(/blur$/.test(eventName) ? window : document).on(eventName, function(event) {
 		var type = event.type;
 		var originalEvent = event.originalEvent;
@@ -56,5 +51,16 @@
 			);
 		}
 	});
+	
+	
+	/** 
+	 * A wrapper around the 'document.hidden' property. Checks if the page is hidden currently.
+	 * 
+	 * @return Boolean
+	 */
+	$.pageHidden = function() {
+
+		return (prefix) ? document[prefix + 'Hidden'] : document.hidden;
+	};
 
 }(this, document, jQuery));
