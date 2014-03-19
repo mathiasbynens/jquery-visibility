@@ -19,13 +19,13 @@ This plugin simply provides two custom events for you to use: `show` and `hide`.
 You can use them separately:
 
 ```js
-$(document).on('show', function() {
+$(document).on('show.visibility', function() {
   // the page gained visibility
 });
 ```
 
 ```js
-$(document).on('hide', function() {
+$(document).on('hide.visibility', function() {
   // the page was hidden
 });
 ```
@@ -34,10 +34,10 @@ Since most of the time you’ll need both events, your best option is to use an 
 
 ```js
 $(document).on({
-  'show': function() {
+  'show.visibility': function() {
     console.log('The page gained visibility; the `show` event was triggered.');
   },
-  'hide': function() {
+  'hide.visibility': function() {
     console.log('The page lost visibility; the `hide` event was triggered.');
   }
 });
