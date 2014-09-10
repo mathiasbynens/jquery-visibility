@@ -43,11 +43,9 @@
 			)
 		) {
 			$event.trigger(
-				(
-					property && document[property] || /^(?:blur|focusout)$/.test(type)
-						? 'hide'
-						: 'show'
-				) + '.visibility'
+				property && document[property] || /^(?:blur|focusout)$/.test(type)
+					? 'hide'
+					: 'show'
 			);
 		}
 	});
