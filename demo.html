@@ -9,13 +9,15 @@
 	}
 </style>
 <h1>Page Visibility plugin for jQuery</h1>
-<p>Detecting Page Visibility API support…
-<p><strong>Focus another tab or window</strong>, and watch the log below.
+<p>Detecting Page Visibility API support…</p>
+<p>The page was <strong id="start-state"></strong> when the page loaded.</p>
+<p><strong>Focus another tab or window</strong>, and watch the log below.</p>
 <pre></pre>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 <script src="jquery-visibility.js"></script>
 <script>
 	$(function() {
+		$("#start-state").text(document.hidden ? "hidden" : "visible");
 
 		var $pre = $('pre');
 

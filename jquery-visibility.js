@@ -1,4 +1,4 @@
-/*! http://mths.be/visibility v1.0.7 by @mathias | MIT license */
+/*! http://mths.be/visibility v1.0.8 by @mathias | MIT license */
 ;(function(window, document, $, undefined) {
 	"use strict";
 

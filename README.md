@@ -43,6 +43,14 @@ $(document).on({
 });
 ```
 
+Or bind both to the same callback and distinguish using the event variable.
+
+```js
+$(document).on('show hide', function (e) {
+	console.log('The page is now', e.type === 'show' ? 'visible' : 'hidden');
+});
+```
+
 The plugin will detect if the Page Visibility API is natively supported in the browser or not, and expose this information as a boolean (`true`/`false`) in `$.support.pageVisibility`:
 
 ```js
@@ -51,9 +59,15 @@ if ($.support.pageVisibility) {
 }
 ```
 
-## Notes
+If the Page Visibility API is supported the plugin will also store the current visibility state in `document.hidden`
 
-Both events live under the `visibility` namespace — so if you ever need to remove all event handlers added by this plugin, you could just use `$(document).off('.visibility');` (or `$(document).unbind('.visibility');` in jQuery 1.6 or older).
+```js
+if (!document.hidden) {
+  // Page is currently visible
+}
+```
+
+## Notes
 
 This plugin is not a Page Visibility [polyfill](http://mths.be/polyfills), as it doesn’t aim to mimic the standard API. It merely provides a simple way to use this functionality (or a fallback) in your jQuery code.
 
@@ -68,3 +82,4 @@ This plugin is available under the MIT license.
 ## Contributors
 
 [John-David Dalton](http://allyoucanleet.com/)
+[Jan Paepke](http://github.com/janpaepke)
