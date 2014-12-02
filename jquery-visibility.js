@@ -21,6 +21,14 @@
 		}
 	}
 
+	// normalize to and update document hidden property
+	function updateState() {
+		if (property !== 'hidden') {
+			document.hidden = $support.pageVisibility ? document[property] : undefined;
+		}
+	}
+	updateState();
+
 	$(/blur$/.test(eventName) ? window : document).on(eventName, function(event) {
 		var type = event.type;
 		var originalEvent = event.originalEvent;
@@ -50,6 +58,8 @@
 						'show'
 			);
 		}
+		// and update the current state
+		updateState();
 	});
 
 }(this, document, jQuery));
