@@ -1,19 +1,21 @@
 /*! http://mths.be/visibility v1.0.7 by @mathias | MIT license */
 ;(function(window, document, $, undefined) {
+	"use strict";
 
 	var prefix;
 	var property;
 	// In Opera, `'onfocusin' in document == true`, hence the extra `hasFocus` check to detect IE-like behavior
-	var eventName = 'onfocusin' in document && 'hasFocus' in document
-		? 'focusin focusout'
-		: 'focus blur';
+	var eventName = 'onfocusin' in document && 'hasFocus' in document ?
+		'focusin focusout' :
+		'focus blur';
 	var prefixes = ['webkit', 'o', 'ms', 'moz', ''];
 	var $support = $.support;
 	var $event = $.event;
 
-	while ((prefix = prefixes.pop()) != undefined) {
+	while ((prefix = prefixes.pop()) !== undefined) {
 		property = (prefix ? prefix + 'H': 'h') + 'idden';
-		if ($support.pageVisibility = typeof document[property] == 'boolean') {
+		$support.pageVisibility = document[property] !== undefined;
+		if ($support.pageVisibility) {
 			eventName = prefix + 'visibilitychange';
 			break;
 		}
@@ -37,9 +39,9 @@
 		// to check the `relatedTarget` property instead.
 		if (
 			!/^focus./.test(type) || (
-				toElement == undefined &&
-				originalEvent.fromElement == undefined &&
-				originalEvent.relatedTarget == undefined
+				toElement === undefined &&
+				originalEvent.fromElement === undefined &&
+				originalEvent.relatedTarget === undefined
 			)
 		) {
 			$event.trigger(
