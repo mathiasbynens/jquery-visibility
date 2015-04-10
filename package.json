@@ -11,7 +11,7 @@
   ],
   "main": "jquery-visibility.js",
   "scripts": {
-    "test": "echo \"No test specified yet. (but that's ok for now)\" && exit 0",
+    "test": "echo \"Error: no test specified.\" && exit 1",
     "start": "open demo.html"
   },
   "homepage": "http://mths.be/visibility",
