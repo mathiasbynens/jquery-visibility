@@ -98,7 +98,7 @@ gulp.task('build', ['lint'], function() {
 		patterns: [
 			{
 				match: /%VERSION%/gm,
-				replacement: info.version
+				replacement: options.version
 			}
 		]
 	};
