@@ -16,7 +16,7 @@
 		"url": "https://github.com/mathiasbynens/jquery-visibility.git"
 	},
 	"dependencies": {
-		"jquery": ">=1.7"
+		"jquery": "*"
 	},
 	"authors": [
 		{

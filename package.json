@@ -31,6 +31,9 @@
   "bugs": {
     "url": "https://github.com/mathiasbynens/jquery-visibility/issues"
   },
+  "dependencies": {
+    "jquery": "*"
+  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-concat-util": "^0.5.2",
