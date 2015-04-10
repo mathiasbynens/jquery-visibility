@@ -22,7 +22,7 @@
 		'focusin focusout' :
 		'focus blur';
 	var prefixes = ['webkit', 'o', 'ms', 'moz', ''];
-	var $support = $.support;
+	var $support = $.support || {};
 	var $event = $.event;
 
 	while ((prefix = prefixes.pop()) !== undefined) {
