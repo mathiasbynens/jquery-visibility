@@ -10,11 +10,11 @@ It does so by using [the Page Visibility API](http://www.w3.org/TR/page-visibili
 
 ## When to use?
 
-Example use cases include but are not limited to pausing/resuming slideshows, video, and/or embedded audio clips.
+Typical use cases include but are not limited to pausing/resuming slideshows, video, and/or embedded audio clips.
 
 ## Example usage
 
-This plugin simply provides two custom events for you to use: `show` and `hide`. When the page visibility state changes, the appropriate event will be triggered.
+This plugin simply provides two custom document events for you to use: `show` and `hide`. When the page visibility state changes, the appropriate event will be triggered.
 
 You can use them separately:
 
@@ -51,7 +51,8 @@ $(document).on('show hide', function (e) {
 });
 ```
 
-The plugin will detect if the Page Visibility API is natively supported in the browser or not, and expose this information as a boolean (`true`/`false`) in `$.support.pageVisibility`:
+The plugin will detect if the Page Visibility API is natively supported in the browser or not, and expose this information as a boolean (`true`/`false`) in `$.support.pageVisibility`.
+__Warning:__ `$.support` was marked deprecated in jQuery version 1.9, so it is likely to be removed in the future.
 
 ```js
 if ($.support.pageVisibility) {
@@ -59,7 +60,7 @@ if ($.support.pageVisibility) {
 }
 ```
 
-If the Page Visibility API is supported the plugin will also store the current visibility state in `document.hidden`
+If the Page Visibility API is supported the plugin will also store the current visibility state in `document.hidden`.
 
 ```js
 if (!document.hidden) {
@@ -81,5 +82,5 @@ This plugin is available under the MIT license.
 
 ## Contributors
 
+[Jan Paepke](http://github.com/janpaepke),
 [John-David Dalton](http://allyoucanleet.com/)
-[Jan Paepke](http://github.com/janpaepke)
