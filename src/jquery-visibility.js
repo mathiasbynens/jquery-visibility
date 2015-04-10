@@ -19,7 +19,6 @@
 		property, // property name of document, that stores page visibility
 		vendorPrefixes = ['webkit', 'o', 'ms', 'moz', ''],
 		$support = $.support || {},
-		$event = $.event,
 		// In Opera, `'onfocusin' in document == true`, hence the extra `hasFocus` check to detect IE-like behavior
 		eventName = 'onfocusin' in document && 'hasFocus' in document ?
 			'focusin focusout' :
@@ -66,7 +65,7 @@
 				originalEvent.relatedTarget === undefined
 			)
 		) {
-			$event.trigger(
+			$(document).triggerHandler(
 					property && document[property] || /^(?:blur|focusout)$/.test(type) ?
 						'hide' :
 						'show'
