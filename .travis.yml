@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - stable
+script: node ./node_modules/gulp/bin/gulp
 notifications:
   email: false
 deploy:
