@@ -14,17 +14,18 @@
 }(this, function(window, $, undefined) {
 	"use strict";
 
-	var prefix;
-	var document = window.document;
-	var property;
-	// In Opera, `'onfocusin' in document == true`, hence the extra `hasFocus` check to detect IE-like behavior
-	var eventName = 'onfocusin' in document && 'hasFocus' in document ?
-		'focusin focusout' :
-		'focus blur';
-	var prefixes = ['webkit', 'o', 'ms', 'moz', ''];
-	var $support = $.support || {};
-	var $event = $.event;
+	var
+		document = window.document,
+		property, // property name of document, that stores page visibility
+		vendorPrefixes = ['webkit', 'o', 'ms', 'moz', ''],
+		$support = $.support || {},
+		$event = $.event,
+		// In Opera, `'onfocusin' in document == true`, hence the extra `hasFocus` check to detect IE-like behavior
+		eventName = 'onfocusin' in document && 'hasFocus' in document ?
+			'focusin focusout' :
+			'focus blur';
 
+	var prefix;
 	while ((prefix = prefixes.pop()) !== undefined) {
 		property = (prefix ? prefix + 'H': 'h') + 'idden';
 		$support.pageVisibility = document[property] !== undefined;
