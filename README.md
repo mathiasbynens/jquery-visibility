@@ -30,7 +30,7 @@ $(document).on('hide', function() {
 });
 ```
 
-Since most of the time you’ll need both events, your best option is to use an events map. This way, you can bind both event handlers in one go:
+For most applications you'll need both events, so the most convenient option is to use an events map. This way, you can bind both event handlers in one go:
 
 ```js
 $(document).on({
@@ -51,7 +51,7 @@ $(document).on('show hide', function (e) {
 });
 ```
 
-The plugin will detect if the Page Visibility API is natively supported in the browser or not, and expose this information as a boolean (`true`/`false`) in `$.support.pageVisibility`.
+The plugin will detect if the Page Visibility API is natively supported in the browser or not, and expose this information as a boolean (`true`/`false`) in `$.support.pageVisibility`.  
 __Warning:__ `$.support` was marked deprecated in jQuery version 1.9, so it is likely to be removed in the future.
 
 ```js
@@ -74,7 +74,7 @@ This plugin is not a Page Visibility [polyfill](http://mths.be/polyfills), as it
 
 ## License
 
-This plugin is available under the MIT license.
+This plugin is available under the [MIT license](http://opensource.org/licenses/MIT).
 
 ## Author
 
