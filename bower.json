@@ -29,8 +29,10 @@
 		}
 	],
 	"ignore": [
+		"src",
 		"**/.*",
-		"demo.html"
+		"gulpfile.js",
+		"*.html"
 	],
 	"license": "MIT"
 }
