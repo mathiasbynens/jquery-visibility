@@ -1,7 +1,21 @@
-;(function(window, document, $, undefined) {
+;(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], function ($) {
+        	return factory(root, $);
+        });
+    } else if (typeof exports === 'object') {
+        // Node/CommonJS
+        module.exports = factory(root, require('jquery'));
+    } else {
+        // Browser globals
+        factory(root, jQuery);
+    }
+}(this, function(window, $, undefined) {
 	"use strict";
 
 	var prefix;
+	var document = window.document;
 	var property;
 	// In Opera, `'onfocusin' in document == true`, hence the extra `hasFocus` check to detect IE-like behavior
 	var eventName = 'onfocusin' in document && 'hasFocus' in document ?
@@ -60,5 +74,4 @@
 		// and update the current state
 		updateState();
 	});
-
-}(this, document, jQuery));
+}));
