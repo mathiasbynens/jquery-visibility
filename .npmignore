@@ -1,0 +1,5 @@
+*.html
+*.yml
+src
+bower.json
+gulpfile.js
