@@ -1,0 +1,11 @@
+/*!
+ * jquery-visibility v%VERSION%
+ * Page visibility shim for jQuery.
+ *
+ * Project Website: http://mths.be/visibility
+ * 
+ * @version %VERSION%
+ * @license MIT.
+ * @author Mathias Bynens - @mathias
+ * @author Jan Paepke - @janpaepke
+ */
