@@ -25,7 +25,7 @@
 			'focus blur';
 
 	var prefix;
-	while ((prefix = prefixes.pop()) !== undefined) {
+	while ((prefix = vendorPrefixes.pop()) !== undefined) {
 		property = (prefix ? prefix + 'H': 'h') + 'idden';
 		$support.pageVisibility = document[property] !== undefined;
 		if ($support.pageVisibility) {
