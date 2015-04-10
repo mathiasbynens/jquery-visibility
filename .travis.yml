@@ -8,6 +8,4 @@ deploy:
   provider: npm
   email: e-mail@janpaepke.de
   api_key:
-    secure: g3eo7PEKf+EhYX7TnWwWgPTAEHr8YMfzAcqzYfYzU+PdzNfeu70wxv30JlqrLsQP9YmdICqqh49VLREzBNTOdBKPcb9TvtJl6DJ0OkeiqIaKi5MmEIM6VXe2kicmmaBjH/cJ2J1xeFknS6qUfygdfaNBH75ArcMxm2L9ycKsmlA=
-  on:
-    tags: true
+    secure: CFA0ggHcMPvFAkvzMxuSqoJzd/aOagZnCWolziQsiEzNSxS2dQKGWawd4m6LwwYPDs0tDMjoZKbjFfoU7MIrrgQDf1WUzLn1hsIbLEuYqKHw7x8LNeNMDedUWlC7AyQeQuieSjFHvi6LelflyO7DKd+sxPeN2smtIUOeKNBup/M=
