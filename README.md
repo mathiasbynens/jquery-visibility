@@ -72,6 +72,8 @@ if (!document.hidden) {
 
 This plugin is not a Page Visibility [polyfill](http://mths.be/polyfills), as it doesn’t aim to mimic the standard API. It merely provides a simple way to use this functionality (or a fallback) in your jQuery code.
 
+If you don't want to host the file yourself, the plugin is also available on CDNJS. See here for latest URLs: https://cdnjs.com/libraries/jquery-visibility
+
 ## License
 
 This plugin is available under the [MIT license](http://opensource.org/licenses/MIT).
