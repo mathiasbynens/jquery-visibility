@@ -11,7 +11,7 @@
         // Browser globals
         factory(root, jQuery);
     }
-}(this, function(window, $, undefined) {
+}(typeof window !== 'undefined' ? window : this, function(window, $, undefined) {
 	"use strict";
 
 	var
